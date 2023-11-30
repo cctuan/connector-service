@@ -1,13 +1,13 @@
 
-import line from '@line/bot-sdk';
-import { NextApiRequest, NextApiResponse } from 'next';
+import * as line from '@line/bot-sdk';
 const config = {
   channelAccessToken: process.env.LINE_CHANNEL_ACCESS_TOKEN || '',
   channelSecret: process.env.LINE_CHANNEL_SECRET || '',
 }
 
 const lineMiddleware = line.middleware(config);
-const handler = (req: NextApiRequest, res: NextApiResponse) => {
+
+const handler = (req: any, res: any) => {
   if (req.method === 'POST') {
     lineMiddleware(req, res, () => {
       res.json({ message: 'OK' });

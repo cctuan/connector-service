@@ -1,6 +1,6 @@
 import { getServerSession } from "next-auth";
 import { useSession, signIn, signOut } from "next-auth/react"
-import { authOptions } from "./api/auth/[...nextauth]/route";
+import { authOptions } from "@/lib/auth";
 import SignInButton from "@/components/SignInButton";
 
 export default async function Home() {
