@@ -29,10 +29,10 @@ router
     return NextResponse.json({ hello: 'world' })
   })
 
-export async function GET(request: NextRequest, ctx: RequestContext) {
-  router.run(request, ctx);
+export async function GET(request: NextRequest, ctx: RequestContext): Promise<any> {
+  return router.run(request, ctx);
 }
 
-export async function POST(request: NextRequest, ctx: RequestContext) {
-  router.run(request, ctx);
+export async function POST(request: NextRequest, ctx: RequestContext): Promise<any> {
+  return router.run(request, ctx);
 }
